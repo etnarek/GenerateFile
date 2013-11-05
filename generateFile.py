@@ -17,7 +17,7 @@ def main():
     cTemplate={"main":"cMainTemplate","make":"makeFileTemplate", "file":["cTemplate", "hTemplate"]}
 
     args=sys.argv
-    extension=args[1]
+    extension=args[1].lower()
     mainFile=args[2]
 
     classOption=False
@@ -36,7 +36,6 @@ def main():
             classList.append(param)
         elif fileOption:
             fileList.append(param)
-    replace=[]
     includes=""
     sources=""
     head_extension=""
@@ -64,6 +63,22 @@ def main():
     #MakeFile
     replace=[("@sources", sources), ("@extension", extension), ("@executable", mainFile)]
     fileMaker(template["make"], replace, "makefile")
+
+    #File
+    for fileName in fileList:
+        fileName=fileName.capitalize()
+        replace=[("@filename", fileName)]
+        fileMaker(template["file"][0], replace, fileName +"."+ extension)
+        fileMaker(template["file"][1], replace, fileName +"."+ head_extension)
+
+    #Class
+    if extension == "cpp":
+        for fileName in classList:
+            fileName=fileName.capitalize()
+            replace=[("@filename", fileName)]
+            fileMaker(template["file"][0], replace, fileName +"."+  extension)
+            fileMaker(template["file"][1], replace, fileName +"."+  head_extension)
+
 
     #for it in replace:
     #    print(it)

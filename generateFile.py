@@ -63,7 +63,7 @@ def main():
 
     #MakeFile
     replace=[("@sources", sources), ("@extension", extension), ("@executable", mainFile)]
-    fileMaker(template["make"], replace, "Makefile")
+    fileMaker(template["make"], replace, "makefile")
 
     #for it in replace:
     #    print(it)

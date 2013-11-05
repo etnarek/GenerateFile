@@ -25,5 +25,35 @@ def main():
             classList.append(param)
         elif fileOption:
             fileList.append(param)
+    templates=""
+    replace=[]
+    includes=""
+    sources=""
+    head_extension=""    
+    if extension == "cpp":
+        templates=cppTemplate
+        head_extension="hpp"
+        for inc in classList:
+            includes+="#include "+inc+".hpp\n"
+            sources+=inc+".cpp "
+    elif extension == "c":
+        templates=cTemplate
+        head_extension="h"
+    
 
+    for fyle in fileList:
+        includes+="#include "+fyle+"."+head_extension+"\n"
+        sources+=fyle+"."+extension+" "
+
+    sources+=mainFile+"."+extension 
+    
+    replace.append(("@include", includes))
+    
+
+    #for it in replace:
+    #    print(it)
+
+    
+
+# (Template, ReplaceList, FileName)
 main()

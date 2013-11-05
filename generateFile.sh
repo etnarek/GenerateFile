@@ -1,7 +1,18 @@
 #!/bin/bash
 
-cppTemplate=("cppClassTemplate" "hppTemplate" "cppMainTemplate" "cppTemplate" "hppClassTemplate" "makeFileTemplate")
-cTemplate=("cMainTemplate" "cTemplate" "cTemplate" "makeFileTemplate")
+declare -A cppTemplate
+cppTemplate["main"]="cppMainTemplate"
+cppTemplate["make"]="makeFileTemplate"
+cppTemplate["class"]="cppClassTemplate"
+cppTemplate["class_head"]="hppClassTemplate"
+cppTemplate["file"]="cppTemplate"
+cppTemplate["file_head"]="hppTemplate"
+
+declare -A cTemplate
+cTemplate["main"]="cMainTemplate"
+cTemplate["make"]="makeFileTemplate"
+cTemplate["file"]="cTemplate"
+cTemplate["file_head"]="hTemplate"
 
 #filename=""
 extention=$1

@@ -76,8 +76,8 @@ def main():
         for fileName in classList:
             fileName=fileName.capitalize()
             replace=[("@filename", fileName)]
-            fileMaker(template["file"][0], replace, fileName +"."+  extension)
-            fileMaker(template["file"][1], replace, fileName +"."+  head_extension)
+            fileMaker(template["class"][0], replace, fileName +"."+  extension)
+            fileMaker(template["class"][1], replace, fileName +"."+  head_extension)
 
 
     #for it in replace:

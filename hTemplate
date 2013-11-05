@@ -1,0 +1,6 @@
+#ifndef @filename_H
+#define @filename_H
+
+#include <stdio.h>
+
+#endif

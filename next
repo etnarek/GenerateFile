@@ -1,0 +1,31 @@
+get params -> fileList + main + classList + extension
+
+
+if extension... -> makeC or makeCPP
+makeC(fileList, main)
+    templatec = ...
+    extension = 
+    head_ext =
+    makeInclude(fileList,head_ext)     
+    create files: main, fileList+head_ext, fileList+ext
+    makeSource(fileList, extension)
+    create makefile with source, extension, main
+
+makeCPP(main, fileList,classList)
+    templaceCPP=...
+    extension =
+    head_ext = ...
+    makeInclude(fileList,head_ext)
+    add classList to include
+    createFiles(main,fileList, head_ext, ext)
+    create files classList+head_ext,classList+ext 
+    makeSource(fileList,extension)
+    add classList to source
+    create makefile
+
+createFiles(main,fileList, head_ext, ext)
+
+makeInclude(fileList, head_ext)
+
+makeSource(fileList, extension)
+

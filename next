@@ -16,11 +16,11 @@ makeCPP(main, fileList,classList)
     extension =
     head_ext = ...
     makeInclude(fileList,head_ext)
-    add classList to include
+    #add classList to include
     createFiles(main,fileList, head_ext, ext)
-    create files classList+head_ext,classList+ext 
+    #create files classList+head_ext,classList+ext 
     makeSource(fileList,extension)
-    add classList to source
+    #add classList to source
     create makefile
 
 createFiles(main,fileList, head_ext, ext)

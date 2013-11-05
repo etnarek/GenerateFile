@@ -1,6 +1,16 @@
 #!/bin/python3
 import sys
 
+def fileMaker(template, replaceList, fileName):
+    infile = open(template)
+    outfile = open(fileName, 'w')
+    for line in infile:
+        for src, target in replaceList:
+            line = line.replace(src, target)
+        outfile.write(line)
+    infile.close()
+    outfile.close()
+
 def main():
     path="/etc/g--/"
     cppTemplate={"main":"cppMainTemplate","make":"makeFileTemplate", "class":["cppClassTemplate", "hppClassTemplate"], "file":["cppTemplate", "hppTemplate"]}

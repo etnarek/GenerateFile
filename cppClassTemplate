@@ -1,0 +1,10 @@
+using namespace std;
+
+@filename::@filename()
+{
+
+}
+@filename::~@filename()
+{
+
+}

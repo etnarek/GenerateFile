@@ -1,0 +1,18 @@
+COMPILATOR=gcc
+FLAGS=-Wall -pedantic -Wextra -Weffc++ -Wstrict-null-sentinal
+
+SOURCES=@sources
+OBJECTS=$(SOURCES:.@extension=.o)
+EXECUTABLE=@executable
+
+all : $(SOURCES) $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS)
+	$(COMPILATOR)  $(OBJECTS) -o $@
+
+.@extension.o:
+	$(COMPILATOR) $(FLAGS) -c $< -o $@
+
+clean:
+	rm -f *.o
+

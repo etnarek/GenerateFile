@@ -16,3 +16,10 @@ $(CONF_PATH):
 uninstall:
 	rm -R $(CONF_PATH)
 	rm $(INSTALL_PATH)/$(EXEC)
+
+clear:
+	rm *.cpp
+	rm *.c
+	rm *.hpp
+	rm *.h
+	rm makefile

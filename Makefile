@@ -1,4 +1,4 @@
-SOURCE=generateFile.sh
+SOURCE=generateFile.py
 EXEC=g--
 CONF_PATH=/etc/g--
 INSTALL_PATH=/usr/local/bin
